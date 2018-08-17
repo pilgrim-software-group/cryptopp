@@ -15,14 +15,7 @@ NAMESPACE_BEGIN(CryptoPP)
     a += b; d ^= a; d = rotlConstant<16,word32>(d); \
     c += d; b ^= c; b = rotlConstant<12,word32>(b); \
     a += b; d ^= a; d = rotlConstant<8,word32>(d); \
-    c += d; b ^= c; b = rotlConstant<7,word32>(b);
-
-#if defined(CRYPTOPP_DEBUG) && !defined(CRYPTOPP_DOXYGEN_PROCESSING)
-void ChaCha_TestInstantiations()
-{
-	ChaCha8::Encryption x;
-}
-#endif
+    c += d; b ^= c; b = rotlConstant<7,word32>(b)
 
 void ChaCha_Policy::CipherSetKey(const NameValuePairs &params, const byte *key, size_t length)
 {
